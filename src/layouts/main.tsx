@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router';
 const MainLayout = () => {
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       {/* Header */}
       <Outlet />
     </div>

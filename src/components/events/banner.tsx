@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
-export default function Hero() {
+export default function Banner() {
   return (
-    <section className='h-screen flex flex-col items-center justify-center relative overflow-hidden'>
+    <section className='max-w-screen flex flex-col text-white bg-no-repeat repeat-0 items-center justify-center relative overflow-hidden bg-[url(@/assets/images/bg-cover.png)] bg-cover h-screen'>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -11,18 +11,18 @@ export default function Hero() {
         className='absolute inset-0 z-0'
       >
         <div
-          className='absolute inset-0 bg-black/70 z-10'
+          className='absolute inset-0 bg-black/60 z-10'
           style={{
-            backgroundImage: `url('/placeholder.svg?height=1080&width=1920')`,
+            backgroundImage: `url(@/assets/images/bg-cover.png)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
         />
       </motion.div>
 
-      <div className='container mx-auto px-4 z-10 text-center'>
+      <div className='z-10 text-center'>
         <motion.h1
-          className='text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-red-500'
+          className='text-6xl font-bold mb-6 text-red-500 font-serif'
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -31,7 +31,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.h2
-          className='text-xl md:text-2xl lg:text-3xl mb-8 text-gray-300'
+          className='text-xl md:text-2xl lg:text-3xl mb-8 text-gray-300 font-semibold'
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -40,7 +40,7 @@ export default function Hero() {
         </motion.h2>
 
         <motion.p
-          className='max-w-2xl mx-auto text-lg text-gray-400'
+          className='max-w-2xl mx-auto text-lg'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
