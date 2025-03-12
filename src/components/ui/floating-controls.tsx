@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {ArrowUp, Brain, FileQuestion, Home} from "lucide-react";
+import {ArrowUp, FileQuestion, Home} from "lucide-react";
 import {useNavigate} from "react-router";
 import {
   Tooltip,
