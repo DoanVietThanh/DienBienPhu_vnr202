@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { QuizSettings as QuizSettingsType } from '@/types';
 import QuizSettings from '@/components/quiz/quiz-settings';
 import QuizContainer from '@/components/quiz/quiz-container';
+import FloatingButtons from '@/components/ui/floating-controls';
 
 export default function QuizPage() {
   const [quizStarted, setQuizStarted] = useState(false);
@@ -17,16 +18,7 @@ export default function QuizPage() {
   };
 
   return (
-    <div className='container mx-auto py-8 px-4 bg-slate-900 h-screen w-screen overflow-hidden'>
-      <div className='mb-8 text-center'>
-        <h1 className='text-2xl font-bold mb-2'>
-          Chào mừng bạn đến với Câu hỏi ôn tập về
-        </h1>
-        <h1 className='text-2xl font-bold'>
-          Hà Nội 12 ngày đêm _ Điện Biên Phủ trên không
-        </h1>
-      </div>
-
+    <div className='container mx-auto py-8 px-4 h-screen w-screen overflow-hidden flex justify-center items-center'>
       {!quizStarted ? (
         <QuizSettings onStartQuiz={handleStartQuiz} />
       ) : (
@@ -34,6 +26,11 @@ export default function QuizPage() {
           <QuizContainer settings={settings} onBack={handleBackToSettings} />
         )
       )}
+      <FloatingButtons
+        isShownTopButton={false}
+        isShownQuizButton={false}
+        isShownHomeButton={true}
+      />
     </div>
   );
 }

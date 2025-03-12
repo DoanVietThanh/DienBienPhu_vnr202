@@ -1,4 +1,6 @@
 import Banner from '@/components/events/banner';
+import FloatingButtons from '@/components/ui/floating-controls';
+import Footer from '@/components/ui/footer';
 import WarAmericanAce from '@/components/ui/war-american-ace';
 import WarArts from '@/components/ui/war-arts';
 import WarDamages from '@/components/ui/war-damages';
@@ -19,6 +21,12 @@ export default function HomePage() {
       <WarArts />
       <WarDamages />
       <WarQuotes />
+      <Footer />
+      <FloatingButtons
+        isShownTopButton={true}
+        isShownQuizButton={true}
+        isShownHomeButton={false}
+      />
     </main>
   );
 }

@@ -37,7 +37,7 @@ export default function QuizQuestion({
   }, [timeRemaining]);
 
   return (
-    <Card className='w-full max-w-3xl mx-auto'>
+    <Card className='w-full max-w-4xl mx-auto'>
       <CardContent className='pt-6'>
         <div className='flex justify-between items-center mb-4'>
           <div className='text-sm font-medium'>
