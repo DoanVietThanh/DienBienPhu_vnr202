@@ -8,6 +8,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import {Button} from "./button";
+import ChatWidget from "./chat-widget";
 
 type Props = {
   isShownTopButton: boolean;
@@ -42,10 +43,11 @@ const FloatingButtons = ({
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
+                size="icon"
                 onClick={scrollToTop}
                 className="bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg transition duration-300"
               >
-                <ArrowUp size={20} />
+                <ArrowUp />
               </Button>
             </TooltipTrigger>
             <TooltipContent>
@@ -60,11 +62,25 @@ const FloatingButtons = ({
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
+                size="icon"
                 onClick={() => navigate("/quiz")}
                 className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition duration-300"
               >
-                <FileQuestion size={20} />
+                <FileQuestion />
               </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Câu hỏi ôn tập</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      )}
+
+      {isShownQuizButton && (
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <ChatWidget />
             </TooltipTrigger>
             <TooltipContent>
               <p>Câu hỏi ôn tập</p>
@@ -78,10 +94,11 @@ const FloatingButtons = ({
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
+                size="icon"
                 onClick={() => navigate("/")}
                 className="bg-gray-600 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition duration-300"
               >
-                <Home size={20} />
+                <Home />
               </Button>
             </TooltipTrigger>
             <TooltipContent>

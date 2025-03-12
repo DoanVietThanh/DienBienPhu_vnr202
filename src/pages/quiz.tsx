@@ -18,7 +18,7 @@ export default function QuizPage() {
   };
 
   return (
-    <div className="relative bg-[url(@/assets/images/bg-cover.png)]">
+    <div className="relative bg-[url(@/assets/images/bg-cover.png)] bg-no-repeat repeat-0 bg-cover">
       <div className="bg-black/50 inset-0 absolute"></div>
       <div className="relative z-10 container mx-auto py-8 px-4 h-screen w-screen overflow-hidden flex justify-center items-center">
         {!quizStarted ? (

@@ -1,5 +1,4 @@
 import {motion} from "framer-motion";
-import {ChevronDown} from "lucide-react";
 
 export default function Banner() {
   return (
@@ -19,7 +18,6 @@ export default function Banner() {
           }}
         />
       </motion.div>
-
       <div className="z-10 text-center">
         <motion.h1
           style={{
@@ -53,14 +51,7 @@ export default function Banner() {
           chống Mỹ.
         </motion.p>
       </div>
-
-      <motion.div
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        animate={{y: [0, 10, 0]}}
-        transition={{repeat: Number.POSITIVE_INFINITY, duration: 1.5}}
-      >
-        <ChevronDown className="w-10 h-10 text-white/70" />
-      </motion.div>
+      s{" "}
     </section>
   );
 }

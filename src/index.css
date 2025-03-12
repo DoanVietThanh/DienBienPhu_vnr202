@@ -122,3 +122,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+df-messenger .bubble {
+  height: 36px;
+  width: 36px;
+}
+
+#df-chat-wrapper {
+  border-radius: 8px;
+}

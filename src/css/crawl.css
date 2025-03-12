@@ -5398,9 +5398,11 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos] {
 
 @font-face {
   font-family: "iCielBC DDCHardwareRough Compressed";
-  src: url("fonts/iCielBCDDCHardwareRough-Compressed.otf");
-  src: url("fonts/iCielBCDDCHardwareRough-Compressed.woff") format("woff"),
-    url("fonts/iCielBCDDCHardwareRough-Compressed.ttf") format("truetype");
+  src: url("../assets/fonts/iCielBCDDCHardwareRough-Compressed.otf");
+  src: url("../assets/fonts/iCielBCDDCHardwareRough-Compressed.woff")
+      format("woff"),
+    url("../assets/fonts/iCielBCDDCHardwareRough-Compressed.ttf")
+      format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -5408,9 +5410,11 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos] {
 
 @font-face {
   font-family: "iCielBC DroneRangerSerif Regular";
-  src: url("fonts/iCielBCDroneRangerSerif-Regular.otf");
-  src: url("fonts/iCielBCDroneRangerSerif-Regular.woff") format("woff"),
-    url("fonts/iCielBCDroneRangerSerif-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/iCielBCDroneRangerSerif-Regular.otf");
+  src: url("../assets/fonts/iCielBCDroneRangerSerif-Regular.woff")
+      format("woff"),
+    url("../assets/fonts/iCielBCDroneRangerSerif-Regular.ttf")
+      format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
