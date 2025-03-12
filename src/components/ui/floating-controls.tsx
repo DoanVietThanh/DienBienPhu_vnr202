@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
-import { ArrowUp, Brain, Home } from 'lucide-react';
-import { useNavigate } from 'react-router';
+import {useEffect, useState} from "react";
+import {ArrowUp, Brain, FileQuestion, Home} from "lucide-react";
+import {useNavigate} from "react-router";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/components/ui/tooltip';
-import { Button } from './button';
+} from "@/components/ui/tooltip";
+import {Button} from "./button";
 
 type Props = {
   isShownTopButton: boolean;
@@ -27,23 +27,23 @@ const FloatingButtons = ({
     const handleScroll = () => {
       setShowButton(window.scrollY > 200);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({top: 0, behavior: "smooth"});
   };
 
   return (
-    <div className='fixed bottom-6 right-6 flex flex-col gap-4 z-50'>
+    <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
       {isShownTopButton && showButton && (
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
                 onClick={scrollToTop}
-                className='bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition duration-300'
+                className="bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg transition duration-300"
               >
                 <ArrowUp size={20} />
               </Button>
@@ -60,10 +60,10 @@ const FloatingButtons = ({
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
-                onClick={() => navigate('/quiz')}
-                className='bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg transition duration-300'
+                onClick={() => navigate("/quiz")}
+                className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition duration-300"
               >
-                <Brain size={20} />
+                <FileQuestion size={20} />
               </Button>
             </TooltipTrigger>
             <TooltipContent>
@@ -78,8 +78,8 @@ const FloatingButtons = ({
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
-                onClick={() => navigate('/')}
-                className='bg-gray-600 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition duration-300'
+                onClick={() => navigate("/")}
+                className="bg-gray-600 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition duration-300"
               >
                 <Home size={20} />
               </Button>

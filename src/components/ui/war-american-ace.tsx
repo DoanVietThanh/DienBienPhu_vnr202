@@ -1,190 +1,211 @@
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
-import B52_1 from '@/assets/images/B52_1.png';
-import B52_2 from '@/assets/images/B52_2.png';
-import B52_3 from '@/assets/images/B52_3.png';
-import B52_4 from '@/assets/images/B52_4.png';
-import AmericanAce1 from '@/assets/images/american_ace_1.png';
-import AmericanAce2 from '@/assets/images/american_ace_2.png';
-import AmericanAce3 from '@/assets/images/american_ace_3.png';
-import AmericaFlag from '@/assets/images/america_flag.png';
-import { Card } from './card';
+import {useInView} from "framer-motion";
+import {useEffect, useRef} from "react";
 
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i = 1) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.2 },
-  }),
-};
+import {cn} from "@/lib/utils";
 
 const WarAmericanAce = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref);
+
+  const refAmerica1 = useRef(null);
+  const isAmerica1InView = useInView(refAmerica1);
+
+  const refAmerica2 = useRef(null);
+  const isAmerica2InView = useInView(refAmerica2);
+
+  const refAmerica3 = useRef(null);
+  const isAmerica3InView = useInView(refAmerica3);
+
+  const refAmerica4 = useRef(null);
+  const isAmerica4InView = useInView(refAmerica4);
+
+  useEffect(() => {
+    console.log({isAmerica4InView});
+  }, [isAmerica4InView]);
 
   return (
-    <div
-      className='flex flex-col items-center gap-8 justify-center mt-8'
-      ref={ref}
-    >
-      <div className='flex flex-col gap-4 w-1/2'>
-        <motion.h1
-          className='font-bold text-2xl text-center'
-          variants={fadeIn}
-          initial='hidden'
-          animate={isInView ? 'visible' : 'hidden'}
-          custom={1}
-        >
-          NHỮNG ÁT CHỦ BÀI
-        </motion.h1>
-        {[
-          'Lầu Năm Góc huy động gần một nửa số B-52 (193/400 chiếc), cất cánh 663 lần; hơn 1/3 số máy bay chiến thuật (khoảng 1.200), cất cánh gần 4.000 lần, 6 trên tổng số 24 tàu sân bay, 66 tàu chiến của Hạm đội 7 ở vịnh Bắc Bộ. Đây là cuộc tập kích đường không lớn nhất trong lịch sử chiến tranh.',
-          'B-52 ném bom theo đội hình, mỗi tốp 3 chiếc, mỗi đợt ít nhất 6 chiếc và nhiều nhất 75 chiếc, theo tài liệu chỉ huy tác chiến phía Việt Nam năm 1972. Hộ tống dàn B-52 là hàng chục chiến đấu cơ làm nhiệm vụ săn lùng MiG-21, thả dải nhiễu và chế áp trận địa tên lửa... Các trận tập kích dùng B-52 ném bom ban đêm, máy bay chiến thuật đánh bồi dai dẳng ban ngày, máy phát nhiễu điện tử hiện đại hỗ trợ.',
-        ].map((text, i) => (
-          <motion.p
-            key={i}
-            className='text-justify'
-            variants={fadeIn}
-            initial='hidden'
-            animate={isInView ? 'visible' : 'hidden'}
-            custom={i + 2}
+    <main className="main-interactive">
+      <section
+        ref={ref}
+        className="section clearfix section-text-content section-text-atchubai"
+      >
+        <div className="container container-small">
+          <div
+            className={cn(
+              "title-block-text aos-init",
+              isInView && "aos-animate"
+            )}
+            data-aos="zoom-in"
+            data-aos-duration="1000"
           >
-            {text}
-          </motion.p>
-        ))}
-      </div>
+            {" "}
+            NHỮNG ÁT CHỦ BÀI
+          </div>
+          <div
+            className={cn("wrap-txt aos-init", isInView && "aos-animate")}
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            <p className="Normal">
+              Lầu Năm Góc huy động gần một nửa số B-52 (193/400 chiếc), cất cánh
+              663 lần; hơn 1/3 số máy bay chiến thuật (khoảng 1.200), cất cánh
+              gần 4.000 lần, 6 trên tổng số 24 tàu sân bay, 66 tàu chiến của Hạm
+              đội 7 ở vịnh Bắc Bộ. Đây là cuộc tập kích đường không lớn nhất
+              trong lịch sử chiến tranh.
+            </p>
+            <p className="Normal">
+              B-52 ném bom theo đội hình, mỗi tốp 3 chiếc, mỗi đợt ít nhất 6
+              chiếc và nhiều nhất 75 chiếc, theo tài liệu chỉ huy tác chiến phía
+              Việt Nam năm 1972. Hộ tống dàn B-52 là hàng chục chiến đấu cơ làm
+              nhiệm vụ săn lùng MiG-21, thả dải nhiễu và chế áp trận địa tên
+              lửa... Các trận tập kích dùng B-52 ném bom ban đêm, máy bay chiến
+              thuật đánh bồi dai dẳng ban ngày, máy phát nhiễu điện tử hiện đại
+              hỗ trợ.
+            </p>{" "}
+          </div>
+        </div>
+      </section>
 
-      <div className='flex flex-col gap-8 w-1/2'>
-        <motion.div
-          className='flex justify-center items-center rounded-lg overflow-hidden'
-          variants={fadeIn}
-          initial='hidden'
-          animate={isInView ? 'visible' : 'hidden'}
-          custom={3}
-        >
-          <motion.img
-            src={AmericaFlag}
-            alt='America Flag'
-            className='w-1/4'
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-          />
-        </motion.div>
+      <section className="section clearfix section-Usa">
+        <div className="container">
+          <div ref={refAmerica1}>
+            <p
+              className={cn(
+                "flag aos-init ",
+                isAmerica1InView && "aos-animate"
+              )}
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+            >
+              <img src="https://s.vnecdn.net/vnexpress/j/v173/event/longform/thoisu/dienbienphutrenkhong/images/graphics/Flag_My.svg" />
+            </p>
+            <p
+              className={cn(
+                "sub-title aos-init ",
+                isAmerica1InView && "aos-animate"
+              )}
+              data-aos="fade-down"
+              data-aos-duration="1000"
+            >
+              Máy bay ném bom chiến lược <strong>B-52</strong>
+            </p>
+            <div
+              className={cn(
+                "img-b52 flexbox aos-init",
+                isAmerica1InView && "aos-animate"
+              )}
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <img src="https://s.vnecdn.net/vnexpress/j/v173/event/longform/thoisu/dienbienphutrenkhong/images/graphics/B52_My.png" />
+            </div>
+          </div>
 
-        <motion.h1
-          className='font-bold text-2xl text-center'
-          variants={fadeIn}
-          initial='hidden'
-          animate={isInView ? 'visible' : 'hidden'}
-          custom={4}
-        >
-          Máy bay ném bom chiến lược B-52
-        </motion.h1>
+          <div ref={refAmerica2}>
+            <div
+              className={cn(
+                "img-info mt35 flexbox aos-init",
+                isAmerica2InView && "aos-animate"
+              )}
+              data-aos="fade-down"
+              data-aos-duration="1000"
+            >
+              <img src="https://s.vnecdn.net/vnexpress/j/v173/event/longform/thoisu/dienbienphutrenkhong/images/graphics/Info_B52.png" />
+            </div>
+            <div
+              className={cn(
+                "img-list mt20 flexbox aos-init",
+                isAmerica2InView && "aos-animate"
+              )}
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <img src="https://s.vnecdn.net/vnexpress/j/v173/event/longform/thoisu/dienbienphutrenkhong/images/graphics/List_mbMy.png" />
+            </div>
+          </div>
 
-        {[B52_1, B52_2, B52_3].map((img, i) => (
-          <motion.img
-            key={i}
-            src={img}
-            alt={`B52_${i + 1}`}
-            className='w-full'
-            variants={fadeIn}
-            initial='hidden'
-            animate={isInView ? 'visible' : 'hidden'}
-            custom={i + 5}
-          />
-        ))}
-      </div>
+          <div ref={refAmerica3} className="box-doihinhbay">
+            <p
+              className={cn(
+                "sub-title aos-init",
+                isAmerica3InView && "aos-animate"
+              )}
+              data-aos="fade-down"
+              data-aos-duration="1000"
+            >
+              <strong>Đội hình bay</strong>
+            </p>
+            <div
+              className={cn(
+                "img-doihinhbay flexbox aos-init",
+                isAmerica3InView && "aos-animate"
+              )}
+              data-aos="fade-left"
+              data-aos-duration="1000"
+            >
+              <img src="https://s.vnecdn.net/vnexpress/j/v173/event/longform/thoisu/dienbienphutrenkhong/images/graphics/doihinhbay_My.png" />
+            </div>
+          </div>
 
-      <div className='flex flex-col gap-8 w-1/2'>
-        <motion.h1
-          className='font-bold text-2xl text-center'
-          variants={fadeIn}
-          initial='hidden'
-          animate={isInView ? 'visible' : 'hidden'}
-          custom={8}
-        >
-          Đội hình bay
-        </motion.h1>
-
-        <motion.img
-          src={B52_4}
-          alt='B52_4'
-          className='w-full'
-          variants={fadeIn}
-          initial='hidden'
-          animate={isInView ? 'visible' : 'hidden'}
-          custom={9}
-        />
-      </div>
-
-      <div className='flex flex-col gap-8 w-1/2'>
-        <motion.h1
-          className='font-bold text-2xl text-center'
-          variants={fadeIn}
-          initial='hidden'
-          animate={isInView ? 'visible' : 'hidden'}
-          custom={10}
-        >
-          Chỉ huy
-        </motion.h1>
-
-        <Card className='grid grid-cols-3 gap-10 shadow-lg'>
-          {[AmericanAce1, AmericanAce2, AmericanAce3].map((img, i) => {
-            const info = [
-              {
-                rank: 'Đại tướng',
-                name: 'John W. Vogt',
-                role: 'Tập đoàn không quân số 7',
-              },
-              {
-                rank: 'Đại tướng',
-                name: 'John C. Meyer',
-                role: 'Không quân chiến lược Mỹ (SAC)',
-              },
-              {
-                rank: 'Phó đô đốc',
-                name: 'Damon W. Cooper',
-                role: 'Nhóm tác chiến số 77',
-              },
-            ][i];
-
-            return (
-              <motion.div
-                key={i}
-                className='col-span-1 text-center text-xs space-y-2'
-                whileHover={{ scale: 1.03 }}
-                transition={{ duration: 0.3 }}
-                variants={fadeIn}
-                initial='hidden'
-                animate={isInView ? 'visible' : 'hidden'}
-                custom={11 + i}
-              >
-                <motion.img
-                  src={img}
-                  alt={`Ace_${i + 1}`}
-                  className='w-1/2 mx-auto hover:scale-105 duration-150 transition-all'
-                />
-                <p>{info.rank}</p>
-                <p className='font-semibold'>{info.name}</p>
-                <p>{info.role}</p>
-              </motion.div>
-            );
-          })}
-        </Card>
-
-        <motion.p
-          className='italic opacity-90 text-center'
-          variants={fadeIn}
-          initial='hidden'
-          animate={isInView ? 'visible' : 'hidden'}
-          custom={15}
-        >
-          Nguồn: To Hanoi and Back: The U.S. Air Force and North Vietnam,
-          1966–1973
-        </motion.p>
-      </div>
-    </div>
+          <div
+            ref={refAmerica4}
+            className={cn(
+              "box-chihuy aos-init",
+              isAmerica4InView && "aos-animate"
+            )}
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            <p className="sub-title">
+              <strong>Chỉ huy</strong>
+            </p>
+            <div className="list-chihuy flexbox">
+              <div className="item-ch">
+                <div className="thumb-ch">
+                  <img src="https://i-vnexpress.vnecdn.net/2022/12/22/ch1-usa-4574-1671694365.png" />
+                </div>
+                <span className="name-ch">
+                  Đại tướng
+                  <br />
+                  <strong>John W. Vogt</strong>
+                  <br />
+                  Chỉ huy Tập đoàn không quân số 7{" "}
+                </span>
+              </div>
+              <div className="item-ch">
+                <div className="thumb-ch">
+                  <img src="https://i-vnexpress.vnecdn.net/2022/12/22/ch2-usa-9302-1671694365.png" />
+                </div>
+                <span className="name-ch">
+                  Đại tướng
+                  <br />
+                  <strong>John C. Meyer</strong>
+                  <br />
+                  Bộ tư lệnh Không quân chiến lược Mỹ (SAC){" "}
+                </span>
+              </div>
+              <div className="item-ch">
+                <div className="thumb-ch">
+                  <img src="https://i-vnexpress.vnecdn.net/2022/12/22/ch3-usa-7677-1671694365.png" />
+                </div>
+                <span className="name-ch">
+                  Phó đô đốc
+                  <br />
+                  <strong>Damon W. Cooper</strong>
+                  <br />
+                  Chỉ huy Nhóm tác chiến số 77{" "}
+                </span>
+              </div>
+            </div>
+            <p className="mt10 caption-img">
+              {" "}
+              Nguồn: To Hanoi and Back: The U.S. Air Force and North Vietnam,
+              1966–1973
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 };
 

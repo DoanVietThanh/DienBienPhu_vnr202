@@ -1,21 +1,18 @@
-import { useState, useEffect, useCallback } from 'react';
-import { Button } from '@/components/ui/button';
-import { Maximize, Minimize } from 'lucide-react';
-import { Quiz, QuizResult, QuizSettings } from '@/types';
-import { quizList } from '@/constants/quiz-list';
-import QuizQuestion from './quiz-question';
-import QuizResults from './quiz-result';
-import TabWarning from '../ui/tab-warnings';
+import {useState, useEffect, useCallback} from "react";
+import {Button} from "@/components/ui/button";
+import {Maximize, Minimize} from "lucide-react";
+import {Quiz, QuizResult, QuizSettings} from "@/types";
+import {quizList} from "@/constants/quiz-list";
+import QuizQuestion from "./quiz-question";
+import QuizResults from "./quiz-result";
+import TabWarning from "../ui/tab-warnings";
 
 interface QuizContainerProps {
   settings: QuizSettings;
   onBack: () => void;
 }
 
-export default function QuizContainer({
-  settings,
-  onBack,
-}: QuizContainerProps) {
+export default function QuizContainer({settings, onBack}: QuizContainerProps) {
   const [questions, setQuestions] = useState<Quiz[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState<Record<number, number>>({});
@@ -62,7 +59,7 @@ export default function QuizContainer({
     const minutes = Math.floor(timeSpentMs / 60000);
     const seconds = Math.floor((timeSpentMs % 60000) / 1000);
     const timeSpentFormatted = `${minutes}:${
-      seconds < 10 ? '0' : ''
+      seconds < 10 ? "0" : ""
     }${seconds}`;
 
     // Calculate score (100 points max)
@@ -102,9 +99,9 @@ export default function QuizContainer({
       }
     };
 
-    document.addEventListener('visibilitychange', handleVisibilityChange);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
     return () => {
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, [quizCompleted]);
 
@@ -170,24 +167,28 @@ export default function QuizContainer({
 
   if (questions.length === 0) {
     return (
-      <div className='flex justify-center items-center h-64'>Đang tải...</div>
+      <div className="flex justify-center items-center h-64">Đang tải...</div>
     );
   }
 
   return (
-    <div className='w-full max-w-4xl mx-auto'>
-      <div className='flex justify-between items-center mb-4'>
-        <Button variant='outline' onClick={onBack}>
+    <div className="w-full max-w-4xl mx-auto rounded-md">
+      <div className="flex justify-between items-center mb-4">
+        <Button variant="outline" onClick={onBack} className="rounded-md">
           Quay lại
         </Button>
-        <Button variant='outline' onClick={toggleFullscreen}>
+        <Button
+          variant="outline"
+          onClick={toggleFullscreen}
+          className="rounded-md"
+        >
           {isFullscreen ? (
             <>
-              <Minimize className='h-4 w-4 mr-2' /> Thu nhỏ
+              <Minimize className="h-4 w-4 mr-2" /> Thu nhỏ
             </>
           ) : (
             <>
-              <Maximize className='h-4 w-4 mr-2' /> Toàn màn hình
+              <Maximize className="h-4 w-4 mr-2" /> Toàn màn hình
             </>
           )}
         </Button>

@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import type { QuizSettings as QuizSettingsType } from '@/types';
-import QuizSettings from '@/components/quiz/quiz-settings';
-import QuizContainer from '@/components/quiz/quiz-container';
-import FloatingButtons from '@/components/ui/floating-controls';
+import {useState} from "react";
+import type {QuizSettings as QuizSettingsType} from "@/types";
+import QuizSettings from "@/components/quiz/quiz-settings";
+import QuizContainer from "@/components/quiz/quiz-container";
+import FloatingButtons from "@/components/ui/floating-controls";
 
 export default function QuizPage() {
   const [quizStarted, setQuizStarted] = useState(false);
@@ -18,19 +18,22 @@ export default function QuizPage() {
   };
 
   return (
-    <div className='container mx-auto py-8 px-4 h-screen w-screen overflow-hidden flex justify-center items-center'>
-      {!quizStarted ? (
-        <QuizSettings onStartQuiz={handleStartQuiz} />
-      ) : (
-        settings && (
-          <QuizContainer settings={settings} onBack={handleBackToSettings} />
-        )
-      )}
-      <FloatingButtons
-        isShownTopButton={false}
-        isShownQuizButton={false}
-        isShownHomeButton={true}
-      />
+    <div className="relative bg-[url(@/assets/images/bg-cover.png)]">
+      <div className="bg-black/50 inset-0 absolute"></div>
+      <div className="relative z-10 container mx-auto py-8 px-4 h-screen w-screen overflow-hidden flex justify-center items-center">
+        {!quizStarted ? (
+          <QuizSettings onStartQuiz={handleStartQuiz} />
+        ) : (
+          settings && (
+            <QuizContainer settings={settings} onBack={handleBackToSettings} />
+          )
+        )}
+        <FloatingButtons
+          isShownTopButton={false}
+          isShownQuizButton={false}
+          isShownHomeButton={true}
+        />
+      </div>
     </div>
   );
 }

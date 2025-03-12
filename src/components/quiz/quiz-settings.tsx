@@ -1,23 +1,23 @@
-import { Button } from '@/components/ui/button';
+import {Button} from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Switch } from '@/components/ui/switch';
-import { quizList } from '@/constants/quiz-list';
-import type { QuizSettings } from '@/types';
-import { useState } from 'react';
+} from "@/components/ui/card";
+import {Input} from "@/components/ui/input";
+import {Label} from "@/components/ui/label";
+
+import {quizList} from "@/constants/quiz-list";
+import type {QuizSettings} from "@/types";
+import {useState} from "react";
 
 interface QuizSettingsProps {
   onStartQuiz: (settings: QuizSettings) => void;
 }
 
-export default function QuizSettings({ onStartQuiz }: QuizSettingsProps) {
+export default function QuizSettings({onStartQuiz}: QuizSettingsProps) {
   const [settings, setSettings] = useState<QuizSettings>({
     numberOfQuestions: 10,
     timeInMinutes: 5,
@@ -46,57 +46,51 @@ export default function QuizSettings({ onStartQuiz }: QuizSettingsProps) {
   };
 
   return (
-    <Card className='w-full max-w-md mx-auto'>
+    <Card className="w-full max-w-md mx-auto rounded-md">
       <CardHeader>
-        <CardTitle className='text-center'>Cài đặt bài kiểm tra</CardTitle>
+        <CardTitle className="text-center">Cài đặt bài kiểm tra</CardTitle>
       </CardHeader>
-      <CardContent className='space-y-4'>
-        <div className='space-y-2'>
-          <Label htmlFor='numberOfQuestions'>
+      <CardContent className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="numberOfQuestions">
             Số lượng câu hỏi (tối đa {quizList.length})
           </Label>
           <Input
-            id='numberOfQuestions'
-            type='number'
+            id="numberOfQuestions"
+            type="number"
             min={1}
             max={quizList.length}
             value={settings.numberOfQuestions}
             onChange={(e) =>
               handleChange(
-                'numberOfQuestions',
+                "numberOfQuestions",
                 Number.parseInt(e.target.value) || 1
               )
             }
           />
         </div>
 
-        <div className='space-y-2'>
-          <Label htmlFor='timeInMinutes'>Thời gian làm bài (phút)</Label>
+        <div className="space-y-2">
+          <Label htmlFor="timeInMinutes">Thời gian làm bài (phút)</Label>
           <Input
-            id='timeInMinutes'
-            type='number'
+            id="timeInMinutes"
+            type="number"
             min={1}
             value={settings.timeInMinutes}
             onChange={(e) =>
               handleChange(
-                'timeInMinutes',
+                "timeInMinutes",
                 Number.parseInt(e.target.value) || 1
               )
             }
           />
         </div>
-
-        <div className='flex items-center justify-between'>
-          <Label htmlFor='fullscreen'>Chế độ toàn màn hình</Label>
-          <Switch
-            id='fullscreen'
-            checked={settings.fullscreen}
-            onCheckedChange={(checked) => handleChange('fullscreen', checked)}
-          />
-        </div>
       </CardContent>
       <CardFooter>
-        <Button className='w-full' onClick={handleSubmit}>
+        <Button
+          className="w-full bg-red-500 hover:bg-red-500/90"
+          onClick={handleSubmit}
+        >
           Bắt đầu làm bài
         </Button>
       </CardFooter>

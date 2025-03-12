@@ -5890,6 +5890,8 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos] {
 }
 
 .main-interactive .section-Usa .flag {
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
 
@@ -5940,6 +5942,10 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos] {
 
 .main-interactive .box-chihuy .list-chihuy .item-ch {
   margin: 0 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
@@ -5960,6 +5966,8 @@ body[data-aos-easing="ease-in-out-quart"] [data-aos] {
 }
 
 .main-interactive .section-Vn .flag {
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
 
