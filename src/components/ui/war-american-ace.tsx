@@ -2,6 +2,14 @@ import {useInView} from "framer-motion";
 import {useEffect, useRef} from "react";
 
 import {cn} from "@/lib/utils";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./dialog";
 
 const WarAmericanAce = () => {
   const ref = useRef(null);
@@ -160,44 +168,140 @@ const WarAmericanAce = () => {
               <strong>Chỉ huy</strong>
             </p>
             <div className="list-chihuy flexbox">
-              <div className="item-ch">
-                <div className="thumb-ch">
-                  <img src="https://i-vnexpress.vnecdn.net/2022/12/22/ch1-usa-4574-1671694365.png" />
-                </div>
-                <span className="name-ch">
-                  Đại tướng
-                  <br />
-                  <strong>John W. Vogt</strong>
-                  <br />
-                  Chỉ huy Tập đoàn không quân số 7{" "}
-                </span>
-              </div>
-              <div className="item-ch">
-                <div className="thumb-ch">
-                  <img src="https://i-vnexpress.vnecdn.net/2022/12/22/ch2-usa-9302-1671694365.png" />
-                </div>
-                <span className="name-ch">
-                  Đại tướng
-                  <br />
-                  <strong>John C. Meyer</strong>
-                  <br />
-                  Bộ tư lệnh Không quân chiến lược Mỹ (SAC){" "}
-                </span>
-              </div>
-              <div className="item-ch">
-                <div className="thumb-ch">
-                  <img src="https://i-vnexpress.vnecdn.net/2022/12/22/ch3-usa-7677-1671694365.png" />
-                </div>
-                <span className="name-ch">
-                  Phó đô đốc
-                  <br />
-                  <strong>Damon W. Cooper</strong>
-                  <br />
-                  Chỉ huy Nhóm tác chiến số 77{" "}
-                </span>
-              </div>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <div className="item-ch hover:scale-110 transition cursor-pointer">
+                    <div className="thumb-ch">
+                      <img src="https://i-vnexpress.vnecdn.net/2022/12/22/ch1-usa-4574-1671694365.png" />
+                    </div>
+                    <span className="name-ch">
+                      Đại tướng
+                      <br />
+                      <strong>John W. Vogt</strong>
+                      <br />
+                      Chỉ huy Tập đoàn không quân số 7{" "}
+                    </span>
+                  </div>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>John W. Vogt</DialogTitle>
+                    <DialogDescription>
+                      Tướng John William Vogt Jr. (18 tháng 3 năm 1920 – 16
+                      tháng 4 năm 2010) là một phi công lái máy bay át chủ bài
+                      của Không quân Lục quân Hoa Kỳ trong Thế chiến II , sau
+                      này đạt được cấp bậc tướng trong Không quân Hoa Kỳ trong
+                      thời kỳ Chiến tranh Lạnh . Ông là chỉ huy Không quân Đồng
+                      minh Trung Âu và là tổng tư lệnh Không quân Hoa Kỳ tại
+                      Châu Âu tại Căn cứ Không quân Ramstein , Đức vào những năm
+                      1970. Vogt sinh ngày 18 tháng 3 năm 1920 tại Elizabeth,
+                      New Jersey , nơi ông tốt nghiệp Trường trung học Thomas
+                      Jefferson năm 1938. Ông nhận bằng Cử nhân Nghệ thuật từ
+                      Đại học Yale và bằng Thạc sĩ Nghệ thuật từ Đại học
+                      Columbia . Ông đảm nhiệm chức vụ tư lệnh Không đoàn Không
+                      quân số 7 (PACAF) và phó tư lệnh Bộ Tư lệnh Hỗ trợ Quân sự
+                      Hoa Kỳ tại Việt Nam vào ngày 10 tháng 4 năm 1972, thay thế
+                      Tướng John D. Lavelle, người đã bị buộc phải từ chức. Vogt
+                      chịu trách nhiệm về các hoạt động không quân ở Đông Nam Á
+                      trong mười tám tháng cuối cùng của hoạt động chiến đấu của
+                      Hoa Kỳ. Với lệnh ngừng bắn ở Việt Nam, ông trở thành chỉ
+                      huy Nhóm Hoạt động Hỗ trợ Hoa Kỳ tại Thái Lan, đơn vị tiến
+                      hành mọi hoạt động không quân của Hoa Kỳ tại Lào và
+                      Campuchia cho đến khi sự tham gia chiến đấu của Hoa Kỳ
+                      chấm dứt vào tháng 8 năm 1973. Ông là sĩ quan duy nhất
+                      từng là tổng tư lệnh của cả Không quân Hoa Kỳ tại Thái
+                      Bình Dương và Châu Âu. Ông nghỉ hưu khỏi Không quân vào
+                      ngày 31 tháng 8 năm 1975. Ông mất ngày 16 tháng 4 năm
+                      2010. Ông được chôn cất tại Nghĩa trang Quốc gia Arlington
+                      ở Khu 59, Lô 4224.
+                    </DialogDescription>
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
+
+              <Dialog>
+                <DialogTrigger asChild>
+                  <div className="item-ch hover:scale-110 transition cursor-pointer">
+                    <div className="thumb-ch">
+                      <img src="https://i-vnexpress.vnecdn.net/2022/12/22/ch2-usa-9302-1671694365.png" />
+                    </div>
+                    <span className="name-ch">
+                      Đại tướng
+                      <br />
+                      <strong>John C. Meyer</strong>
+                      <br />
+                      Bộ tư lệnh Không quân chiến lược Mỹ (SAC){" "}
+                    </span>
+                  </div>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>John C. Meyer</DialogTitle>
+                    <DialogDescription>
+                      Tướng John Charles Meyer (3 tháng 4 năm 1919 – 2 tháng 12
+                      năm 1975) là một phi công xuất sắc của Mỹ trong Thế chiến
+                      II , sau này là tổng tư lệnh Bộ tư lệnh Không quân Chiến
+                      lược (SAC) và giám đốc Ban tham mưu Lập kế hoạch Mục tiêu
+                      Chiến lược Chung tại Căn cứ Không quân Offutt , Nebraska .
+                      SAC là lực lượng răn đe hạt nhân chính của Hoa Kỳ với máy
+                      bay ném bom, máy bay tiếp dầu và máy bay trinh sát, cùng
+                      tên lửa đạn đạo xuyên lục địa . Ban tham mưu Lập kế hoạch
+                      Mục tiêu Chiến lược Chung đã phối hợp các kế hoạch chiến
+                      tranh hạt nhân của quốc gia và xây dựng Kế hoạch Hoạt động
+                      Tích hợp Đơn lẻ . Meyer sinh ra tại Brooklyn , New York,
+                      vào ngày 3 tháng 4 năm 1919. [ 3 ] Ông theo học tại các
+                      trường học ở New York và rời Dartmouth để trở thành Học
+                      viên Hàng không vào năm 1939. Sau Thế chiến thứ II, ông
+                      tốt nghiệp Cao đẳng Dartmouth với bằng Cử nhân Nghệ thuật
+                      chuyên ngành địa lý chính trị. Meyer qua đời vì một cơn
+                      đau tim vào ngày 2 tháng 12 năm 1975 và được chôn cất theo
+                      nghi lễ quân đội đầy đủ tại Nghĩa trang Quốc gia Arlington
+                      . Năm 1988, Meyer được ghi danh vào Viện danh vọng hàng
+                      không quốc gia .
+                    </DialogDescription>
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
+
+              <Dialog>
+                <DialogTrigger asChild>
+                  <div className="item-ch hover:scale-110 transition cursor-pointer">
+                    <div className="thumb-ch">
+                      <img src="https://i-vnexpress.vnecdn.net/2022/12/22/ch3-usa-7677-1671694365.png" />
+                    </div>
+                    <span className="name-ch">
+                      Phó đô đốc
+                      <br />
+                      <strong>Damon W. Cooper</strong>
+                      <br />
+                      Chỉ huy Nhóm tác chiến số 77{" "}
+                    </span>
+                  </div>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>John C. Meyer</DialogTitle>
+                    <DialogDescription>
+                      Damon Warren " Hutch " Cooper (27 tháng 4 năm 1919 – 19
+                      tháng 11 năm 1985) là Phó đô đốc Hải quân Hoa Kỳ đã phục
+                      vụ trong các cuộc xung đột từ những năm 1940 đến những năm
+                      1970, bao gồm cả chức vụ Chỉ huy Lực lượng Đặc nhiệm 77
+                      trong giai đoạn cuối của Chiến tranh Việt Nam . Ông sinh
+                      ra tại Elizabethtown, Kentucky vào ngày 27 tháng 4 năm
+                      1919. Ông theo học tại Cao đẳng Sư phạm Tiểu bang Western
+                      Kentucky ở Bowling Green, Kentucky Vào ngày 12 tháng 4 năm
+                      1973, ông đảm nhiệm chức vụ Trưởng phòng Dự bị Hải quân
+                      tại New Orleans , Louisiana, đồng thời đảm nhiệm thêm chức
+                      vụ Giám đốc Dự bị Hải quân trong ban tham mưu của Trưởng
+                      phòng Tác chiến Hải quân. Hiệp hội Tailhook đã vinh danh
+                      ông là Người móc đuôi của Hải quân Hoa Kỳ trong năm 1973.
+                      Ông nghỉ hưu khỏi Hải quân vào năm 1974.
+                    </DialogDescription>
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
             </div>
-            <p className="mt10 caption-img">
+            <p className="mt-8 caption-img">
               {" "}
               Nguồn: To Hanoi and Back: The U.S. Air Force and North Vietnam,
               1966–1973

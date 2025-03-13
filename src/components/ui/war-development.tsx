@@ -6,6 +6,9 @@ const WarDevelopment = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
+  const refImage = useRef(null);
+  const imageInView = useInView(refImage);
+
   return (
     <main ref={ref} className="main-interactive">
       <section className="section clearfix section-text-content">
@@ -71,6 +74,23 @@ const WarDevelopment = () => {
               bạn chỉ cần ấn nút rồi trở về căn cứ an toàn, sạch sẽ".
             </p>{" "}
           </div>
+        </div>
+      </section>
+
+      <section
+        ref={refImage}
+        className={cn(
+          "section clearfix section-map-report aos-init",
+          imageInView && "aos-animate"
+        )}
+        data-aos="fade-right"
+        data-aos-duration="1000"
+      >
+        <div className="container flex flex-col justify-center items-center">
+          <img src="https://special.nhandan.vn/HaNoi_DienBienPhutrenkhong_12ngaydem/assets/gRxme4LTGR/28-12-tuong-quan-luc-luong-copy-1920x2723.webp" />
+          <p className="mt10 caption-img">
+            Nguồn: Quân chủng Phòng không-Không quân, Bảo tàng Chiến thắng B-52
+          </p>
         </div>
       </section>
     </main>
