@@ -248,7 +248,7 @@ function formatTime(date: Date): string {
 function speak(text: string) {
   const speech = new SpeechSynthesisUtterance(text);
   speech.lang = "vi-VN"; // Chọn ngôn ngữ (ví dụ: tiếng Việt)
-  speech.rate = 1; // Tốc độ đọc (1 là bình thường)
+  speech.rate = 1.2; // Tốc độ đọc (1 là bình thường)
   speech.pitch = 1; // Cao độ (1 là bình thường)
 
   window.speechSynthesis.speak(speech);
