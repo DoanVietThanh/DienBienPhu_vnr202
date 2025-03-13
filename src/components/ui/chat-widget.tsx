@@ -9,6 +9,7 @@ import {cn} from "@/lib/utils";
 import {AnimatePresence, motion} from "framer-motion";
 import {v4 as uuidv4} from "uuid";
 import axios from "axios";
+import ReactMarkdown from "react-markdown";
 
 interface Message {
   id: string;
@@ -152,7 +153,9 @@ export default function ChatWidget() {
                           : "bg-muted text-muted-foreground rounded-bl-none"
                       )}
                     >
-                      <p className="break-words text-sm">{message.content}</p>
+                      <div className="break-words text-sm">
+                        <ReactMarkdown>{message.content}</ReactMarkdown>
+                      </div>
                       <div
                         className={cn(
                           "flex items-center text-xs mt-1",
