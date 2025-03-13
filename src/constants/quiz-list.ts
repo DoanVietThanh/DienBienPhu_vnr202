@@ -1,263 +1,303 @@
-import { Quiz } from '@/types';
+import {Quiz} from "@/types";
 
 export const quizList: Quiz[] = [
   {
     id: 1,
-    question: 'Trận "Điện Biên Phủ trên không" diễn ra vào thời gian nào?',
+    question: "B52 là?",
     options: [
-      { id: 1, text: 'Tháng 12 năm 1972', isCorrect: true },
-      { id: 2, text: 'Tháng 4 năm 1975', isCorrect: false },
-      { id: 3, text: 'Tháng 9 năm 1973', isCorrect: false },
+      {id: 1, text: "máy bay tối tân lúc bấy giờ", isCorrect: false},
+      {id: 2, text: "pháo máy bay", isCorrect: false},
+      {id: 3, text: "máy bay ném bom hiện đại nhất thời ấy", isCorrect: true},
+      {id: 4, text: "máy bay bay cao 16km", isCorrect: false},
     ],
   },
   {
     id: 2,
-    question:
-      'Mục tiêu chính của Mỹ trong trận "Điện Biên Phủ trên không" là gì?',
+    question: "Mở đầu 12 ngày đêm ném bom hủy diệt là khoảng 20 giờ?",
     options: [
-      { id: 1, text: 'Đánh bại miền Bắc nhanh chóng', isCorrect: false },
-      {
-        id: 2,
-        text: 'Ép Việt Nam trở lại bàn đàm phán theo điều kiện của Mỹ',
-        isCorrect: true,
-      },
-      { id: 3, text: 'Bảo vệ miền Nam Việt Nam', isCorrect: false },
+      {id: 1, text: "ngày 21-12-1972", isCorrect: false},
+      {id: 2, text: "ngày 18-12-1972", isCorrect: true},
+      {id: 3, text: "ngày 26-12-1972", isCorrect: false},
+      {id: 4, text: "ngày 29-12-1972", isCorrect: false},
     ],
   },
   {
     id: 3,
-    question:
-      'Loại máy bay chiến lược nào của Mỹ bị bắn rơi nhiều nhất trong trận này?',
+    question: "Mĩ đã ném bom ồ ạt xuống?",
     options: [
-      { id: 1, text: 'B-52', isCorrect: true },
-      { id: 2, text: 'F-4 Phantom', isCorrect: false },
-      { id: 3, text: 'F-105 Thunderchief', isCorrect: false },
+      {id: 1, text: "bệnh viện", isCorrect: false},
+      {id: 2, text: "trường học", isCorrect: false},
+      {id: 3, text: "bến xe", isCorrect: false},
+      {id: 4, text: "Hà Nội", isCorrect: true},
     ],
   },
   {
     id: 4,
-    question: 'Hệ thống phòng không chủ lực của Hà Nội khi đó là gì?',
+    question: "Dã man nhất là Mĩ ném bom hủy diệt?",
     options: [
-      { id: 1, text: 'S-75 Dvina (SAM-2)', isCorrect: true },
-      { id: 2, text: 'S-300', isCorrect: false },
-      { id: 3, text: 'Patriot', isCorrect: false },
+      {id: 1, text: "bến xe, khu phố", isCorrect: false},
+      {id: 2, text: "bệnh viện trường học", isCorrect: true},
+      {id: 3, text: "trường học", isCorrect: false},
+      {id: 4, text: "bệnh viện khu phố", isCorrect: false},
     ],
   },
   {
     id: 5,
-    question:
-      'Trong vòng 12 ngày đêm, Hà Nội đã bắn rơi bao nhiêu máy bay B-52 của Mỹ?',
+    question: "Quân dân Hà Nội đã bắn 7 chiếc B52, bắt sống 12 phi công trong?",
     options: [
-      { id: 1, text: '34 chiếc', isCorrect: true },
-      { id: 2, text: '21 chiếc', isCorrect: false },
-      { id: 3, text: '40 chiếc', isCorrect: false },
+      {id: 1, text: "đêm 20 rạng sáng 21-12", isCorrect: true},
+      {id: 2, text: "đêm 18 rạng sáng 19-12", isCorrect: false},
+      {id: 3, text: "đêm 25 rạng sáng 26-12", isCorrect: false},
+      {id: 4, text: "đêm 20-12", isCorrect: false},
     ],
   },
   {
     id: 6,
     question:
-      'Ai là Tổng thống Mỹ khi trận "Điện Biên Phủ trên không" diễn ra?',
+      "Thời gian địch tập trung nhiều máy bay B52 nhất ném bom hòng hủy diệt Hà Nội?",
     options: [
-      { id: 1, text: 'Richard Nixon', isCorrect: true },
-      { id: 2, text: 'Lyndon B. Johnson', isCorrect: false },
-      { id: 3, text: 'John F. Kennedy', isCorrect: false },
+      {id: 1, text: "ngày 18-12", isCorrect: false},
+      {id: 2, text: "ngày 21-12", isCorrect: false},
+      {id: 3, text: "ngày 26-12", isCorrect: true},
+      {id: 4, text: "ngày 29-12", isCorrect: false},
     ],
   },
   {
     id: 7,
-    question: 'Chiến dịch bảo vệ Hà Nội trong trận này có tên là gì?',
+    question: "Hơn 100 địa điểm ở Hà Nội bị trúng bom trong ngày?",
     options: [
-      { id: 1, text: 'Chiến dịch Phòng không Hà Nội', isCorrect: false },
-      { id: 2, text: 'Chiến dịch Điện Biên Phủ trên không', isCorrect: true },
-      { id: 3, text: 'Chiến dịch Hồ Chí Minh', isCorrect: false },
+      {id: 1, text: "26-12", isCorrect: true},
+      {id: 2, text: "18-12", isCorrect: false},
+      {id: 3, text: "21-12", isCorrect: false},
+      {id: 4, text: "29-12", isCorrect: false},
     ],
   },
   {
     id: 8,
     question:
-      'Đài phát thanh nào tuyên bố chiến thắng của Việt Nam sau trận này?',
+      "Riêng ở Phố Khâm Thiên bom Mĩ đã sát hại 300 người, phá hủy 2000 ngôi nhà trong ngày?",
     options: [
-      { id: 1, text: 'Đài Tiếng nói Việt Nam', isCorrect: true },
-      { id: 2, text: 'BBC', isCorrect: false },
-      { id: 3, text: 'VOA', isCorrect: false },
+      {id: 1, text: "18-12", isCorrect: true},
+      {id: 2, text: "21-12", isCorrect: false},
+      {id: 3, text: "29-12", isCorrect: false},
+      {id: 4, text: "26-12", isCorrect: false},
     ],
   },
   {
     id: 9,
-    question: 'Trận "Điện Biên Phủ trên không" kéo dài bao nhiêu ngày?',
+    question:
+      "Riêng ở Phố Khâm Thiên bom Mĩ đã sát hại 300 người, phá hủy 2000 ngôi nhà trong ngày?",
     options: [
-      { id: 1, text: '12 ngày đêm', isCorrect: true },
-      { id: 2, text: '15 ngày đêm', isCorrect: false },
-      { id: 3, text: '10 ngày đêm', isCorrect: false },
+      {id: 1, text: "29-12", isCorrect: false},
+      {id: 2, text: "26-12", isCorrect: true},
+      {id: 3, text: "18-12", isCorrect: false},
+      {id: 4, text: "21-12", isCorrect: false},
     ],
   },
   {
     id: 10,
-    question: 'Ngày kết thúc trận "Điện Biên Phủ trên không" là ngày nào?',
+    question: "Đêm bắn rơi 1 chiếc B52 là",
     options: [
-      { id: 1, text: '30/12/1972', isCorrect: true },
-      { id: 2, text: '27/1/1973', isCorrect: false },
-      { id: 3, text: '7/5/1954', isCorrect: false },
+      {id: 1, text: "đêm 18-12-1972", isCorrect: true},
+      {id: 2, text: "đêm 20-12-1972", isCorrect: false},
+      {id: 3, text: "đêm 29-12-1972", isCorrect: false},
+      {id: 4, text: "đêm 26-12-1972", isCorrect: false},
     ],
   },
   {
     id: 11,
-    question: 'Hệ thống radar nào đóng vai trò quan trọng trong trận này?',
+    question: "Nixon tuyên bố ngừng ném bom bắn phá miền Bắc lúc nào",
     options: [
-      { id: 1, text: 'P-12', isCorrect: true },
-      { id: 2, text: 'Patriot', isCorrect: false },
-      { id: 3, text: 'Aegis', isCorrect: false },
+      {id: 1, text: "ngày 23-12-1972", isCorrect: true},
+      {id: 2, text: "ngày 29-12-1972", isCorrect: false},
+      {id: 3, text: "ngày 20-12-1972", isCorrect: false},
+      {id: 4, text: "ngày 26-12-1972", isCorrect: false},
     ],
   },
   {
     id: 12,
-    question: 'Địa điểm nào ở Hà Nội bị Mỹ đánh phá ác liệt nhất?',
+    question:
+      "Mĩ dùng máy bay B52 ném bom Hà Nội và các thành phố lớn ở miền Bắc âm mưu",
     options: [
-      { id: 1, text: 'Bạch Mai', isCorrect: true },
-      { id: 2, text: 'Hoàn Kiếm', isCorrect: false },
-      { id: 3, text: 'Tây Hồ', isCorrect: false },
+      {id: 1, text: "hủy diệt", isCorrect: false},
+      {id: 2, text: "giết người", isCorrect: false},
+      {id: 3, text: "khuất phục nhân dân ta", isCorrect: true},
+      {id: 4, text: "kéo dài chiến tranh", isCorrect: false},
     ],
   },
   {
     id: 13,
-    question: 'Ai là người chỉ huy lực lượng phòng không Việt Nam khi đó?',
+    question:
+      "Có bao nhiêu máy bay của Mỹ bắn rơi trong 12 ngày đêm tháng 12-1972",
     options: [
-      { id: 1, text: 'Võ Nguyên Giáp', isCorrect: false },
-      { id: 2, text: 'Lê Trọng Tấn', isCorrect: false },
-      { id: 3, text: 'Văn Tiến Dũng', isCorrect: true },
+      {id: 1, text: "34", isCorrect: false},
+      {id: 2, text: "81", isCorrect: true},
+      {id: 3, text: "43", isCorrect: false},
+      {id: 4, text: "18", isCorrect: false},
     ],
   },
   {
     id: 14,
-    question: 'Vì sao trận này được gọi là "Điện Biên Phủ trên không"?',
+    question: "Có bao nhiêu máy bay B52 của Mĩ bị bắn rơi trong 12 ngày",
+    options: [
+      {id: 1, text: "18", isCorrect: false},
+      {id: 2, text: "81", isCorrect: false},
+      {id: 3, text: "43", isCorrect: false},
+      {id: 4, text: "34", isCorrect: true},
+    ],
+  },
+  {
+    id: 15,
+    question:
+      "12 ngày đêm chiến đấu và chiến thắng cuối năm 1972 của quân ta được thế giới gọi là",
+    options: [
+      {id: 1, text: "chiến dịch phòng không oanh liệt", isCorrect: false},
+      {id: 2, text: "thất bại nặng nề của không quân Mĩ", isCorrect: false},
+      {id: 3, text: "trận 'Điện Biên Phủ trên không''", isCorrect: true},
+      {id: 4, text: "chiến tranh oanh liệt", isCorrect: false},
+    ],
+  },
+  {
+    id: 16,
+    question: "Gọi trận 'Điện Biên Phủ trên không'' là do",
+    options: [
+      {id: 1, text: "tầm vóc vĩ đại của chiến thắng", isCorrect: true},
+      {id: 2, text: "chiến thắng oanh liệt", isCorrect: false},
+      {id: 3, text: "thất bại nặng nề của Mĩ", isCorrect: false},
+      {id: 4, text: "chiến dịch phòng không oanh liệt nhất", isCorrect: false},
+    ],
+  },
+  {
+    id: 17,
+    question:
+      "Trong 6 tháng đầu năm 1972 quân ta đã dành được những thành tích như thế nào?",
     options: [
       {
         id: 1,
-        text: 'Do tầm quan trọng chiến lược và chiến thắng lớn',
+        text: "Dành được nhiều thắng lợi quan trọng trên chiến trường miền Nam",
         isCorrect: true,
       },
-      { id: 2, text: 'Do diễn ra ở Điện Biên', isCorrect: false },
+      {
+        id: 2,
+        text: "Dành được nhiều thắng lợi quan trọng trên chiến trường miền Bắc",
+        isCorrect: false,
+      },
       {
         id: 3,
-        text: 'Do có sự tham gia của bộ đội Điện Biên',
+        text: "Dành được một vài thắng lợi quan trọng trên chiến trường miền Nam",
+        isCorrect: false,
+      },
+      {
+        id: 4,
+        text: "Dành được  một vài thắng lợi quan trọng trên chiến trường miền  Bắc",
         isCorrect: false,
       },
     ],
   },
   {
-    id: 15,
-    question: 'Thỏa thuận nào được ký kết sau trận này?',
-    options: [
-      { id: 1, text: 'Hiệp định Paris', isCorrect: true },
-      { id: 2, text: 'Hiệp định Genève', isCorrect: false },
-      { id: 3, text: 'Hiệp định Paris lần 2', isCorrect: false },
-    ],
-  },
-  {
-    id: 16,
-    question: 'Chiến thắng này đã ảnh hưởng như thế nào đến chiến lược của Mỹ?',
-    options: [
-      {
-        id: 1,
-        text: 'Mỹ phải ngừng ném bom và quay lại đàm phán',
-        isCorrect: true,
-      },
-      { id: 2, text: 'Mỹ tăng cường ném bom', isCorrect: false },
-      { id: 3, text: 'Mỹ mở rộng chiến tranh ra miền Bắc', isCorrect: false },
-    ],
-  },
-  {
-    id: 17,
-    question: 'Tên của chiến dịch Mỹ tấn công Hà Nội là gì?',
-    options: [
-      { id: 1, text: 'Linebacker II', isCorrect: true },
-      { id: 2, text: 'Rolling Thunder', isCorrect: false },
-      { id: 3, text: 'Arc Light', isCorrect: false },
-    ],
-  },
-  {
     id: 18,
-    question: 'Trận này đã thể hiện điều gì về ý chí của nhân dân Việt Nam?',
+    question: "Đế quốc Mĩ kí hiệp định Pa - ri vào thời gian nào?",
     options: [
-      {
-        id: 1,
-        text: 'Ý chí kiên cường và chiến thuật xuất sắc',
-        isCorrect: true,
-      },
-      { id: 2, text: 'Sự yếu kém về phòng không', isCorrect: false },
-      { id: 3, text: 'Sự phụ thuộc vào viện trợ', isCorrect: false },
+      {id: 1, text: "8 - 1972", isCorrect: false},
+      {id: 2, text: "9 - 1972", isCorrect: false},
+      {id: 3, text: "10 - 1972", isCorrect: true},
+      {id: 4, text: "10 - 1971", isCorrect: false},
     ],
   },
   {
     id: 19,
     question:
-      'Trong trận "Điện Biên Phủ trên không", quân đội Việt Nam đã áp dụng chiến thuật nào để bắn hạ B-52 hiệu quả nhất?',
+      "Đến gần ngày kí hiệp định  Pa - ri  thì Mĩ đã có hành động như thế nào?",
     options: [
-      { id: 1, text: 'Bắn loạt đạn liên tục từ nhiều hướng', isCorrect: false },
       {
-        id: 2,
-        text: 'Tạo trận địa giả để đánh lừa và phục kích',
+        id: 1,
+        text: "Tổng thống Mĩ Ních - xơn đã lật lọng, sử dụng máy bay tối tân nhất ném bom hòng hủy diệt Hà Nội và các thành phố lớn ở miền Bắc Việt Nam",
         isCorrect: true,
       },
-      { id: 3, text: 'Sử dụng tên lửa tầm ngắn liên tiếp', isCorrect: false },
-      { id: 4, text: 'Bắn theo sơ đồ hình tròn', isCorrect: false },
+      {
+        id: 2,
+        text: "Tổng thống Mĩ Ních - xơn đã lật lọng, sử dụng máy bay tối tân nhất ném bom hòng hủy diệt Hà Nội",
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: "Tổng thống Mĩ Ních - xơn đã lật lọng, sử dụng máy bay tối tân nhất ném bom hòng hủy diệt  các thành phố lớn ở miền Nam",
+        isCorrect: false,
+      },
+      {
+        id: 4,
+        text: "Tổng thống Mĩ Ních - xơn đã lật lọng, sử dụng máy bay tối tân nhất ném bom hòng hủy diệt Hà Nội và các thành phố lớn ở miền Nam",
+        isCorrect: false,
+      },
     ],
   },
   {
     id: 20,
     question:
-      'Sự kiện nào sau đây xảy ra đồng thời với trận "Điện Biên Phủ trên không"?',
+      "Chọn đáp án không đúng: Âm mưu của đế quốc Mĩ trong việc dùng máy bay B52",
     options: [
       {
         id: 1,
-        text: 'Phong trào chống chiến tranh ở Mỹ phát triển mạnh',
+        text: "Mĩ ném bom hhòng phá hoại, hủy diệt Hà Nội",
+        isCorrect: false,
+      },
+      {id: 2, text: "Mĩ muốn khuất phục nhân dân ta", isCorrect: false},
+      {
+        id: 3,
+        text: "Mĩ muốn nắm ưu thế trong việc đàm phán chấm dứt chiến tranh, lập lại hòa bình ở Việt Nam.",
+        isCorrect: false,
+      },
+      {
+        id: 4,
+        text: "Mĩ ném bom hòng phá hoại, hủy diệt Sài Gòn",
         isCorrect: true,
       },
-      { id: 2, text: 'Cuộc tổng tiến công Mậu Thân 1968', isCorrect: false },
-      { id: 3, text: 'Hiệp định Genève được ký kết', isCorrect: false },
-      { id: 4, text: 'Chiến dịch Hồ Chí Minh', isCorrect: false },
     ],
   },
   {
     id: 21,
     question:
-      'Để tránh radar của Mỹ, các đơn vị tên lửa của Việt Nam đã áp dụng biện pháp gì?',
+      "Mĩ ồ ạt ném bom vào Hà Nội, mở đầu 12 ngày đêm ném bom hủy diệ vào thời gian nào?",
     options: [
-      { id: 1, text: 'Di chuyển trận địa ngay sau khi phóng', isCorrect: true },
-      { id: 2, text: 'Dùng thiết bị gây nhiễu tân tiến', isCorrect: false },
-      { id: 3, text: 'Bắn tên lửa từ dưới biển', isCorrect: false },
-      { id: 4, text: 'Ẩn mình trong rừng sâu', isCorrect: false },
+      {id: 1, text: "Khoảng 18 giờ ngày 18/12/1972", isCorrect: false},
+      {id: 2, text: "Khoảng 19 giờ ngày 18/12/1972", isCorrect: false},
+      {id: 3, text: "Khoảng 20 giờ ngày 18/12/1972", isCorrect: true},
+      {id: 4, text: "Khoảng 21 giờ ngày 18/12/1972", isCorrect: false},
     ],
   },
   {
     id: 22,
-    question: 'Mật danh của chiến dịch phòng không bảo vệ Hà Nội là gì?',
+    question:
+      "Máy bay Mĩ đã đánh phá Hà Nội  và các vùng phụ cận trong thời gian bao lâu?",
     options: [
-      { id: 1, text: 'Chiến dịch Hoa Lửa', isCorrect: false },
-      { id: 2, text: 'Chiến dịch Bảo vệ Thủ đô', isCorrect: false },
-      { id: 3, text: 'Chiến dịch Cánh Đồng Chum', isCorrect: false },
-      {
-        id: 4,
-        text: 'Chiến dịch Phòng không Hà Nội - Hải Phòng',
-        isCorrect: true,
-      },
+      {id: 1, text: "12 ngày đêm", isCorrect: true},
+      {id: 2, text: "13 ngày đêm", isCorrect: false},
+      {id: 3, text: "14 ngày đêm", isCorrect: false},
+      {id: 4, text: "15 ngày đêm", isCorrect: false},
     ],
   },
   {
     id: 23,
-    question:
-      'Để đối phó với B-52, Việt Nam đã cải tiến tên lửa SAM-2 như thế nào?',
+    question: "Quân Mĩ đã đánh bom vào các vị trí nào của nước ta?",
     options: [
-      { id: 1, text: 'Tăng tầm bắn và độ chính xác', isCorrect: false },
       {
-        id: 2,
-        text: 'Giảm thời gian nạp đạn và nâng cao khả năng chống nhiễu',
+        id: 1,
+        text: "Chúng ném bom vào bệnh viện, trường học, khu phố, bến xe,...",
         isCorrect: true,
       },
-      { id: 3, text: 'Trang bị đầu đạn hạt nhân', isCorrect: false },
+      {
+        id: 2,
+        text: "Chúng ném bom vào trường học, khu phố, bến xe,...",
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: "Chúng ném bom vào bệnh viện, trường học,...",
+        isCorrect: false,
+      },
       {
         id: 4,
-        text: 'Kết hợp với hệ thống phòng không tầm thấp',
+        text: "Chúng ném bom vào bệnh viện, bến xe,...",
         isCorrect: false,
       },
     ],
@@ -265,35 +305,100 @@ export const quizList: Quiz[] = [
   {
     id: 24,
     question:
-      'Mỹ đã sử dụng chiến thuật nào để cố gắng làm suy yếu hệ thống phòng không của Hà Nội?',
+      "Quân ta bắn rơi 7 chiếc máy bay B52; bắt sống nhiều phi công Mĩ vào thời gian nào?",
     options: [
-      {
-        id: 1,
-        text: 'Tấn công dồn dập liên tục cả ngày lẫn đêm',
-        isCorrect: false,
-      },
-      {
-        id: 2,
-        text: 'Sử dụng nhiễu điện tử và bắn phá sân bay',
-        isCorrect: true,
-      },
-      { id: 3, text: 'Đổ bộ lực lượng đặc nhiệm', isCorrect: false },
-      { id: 4, text: 'Tấn công vào các tỉnh phía Nam', isCorrect: false },
+      {id: 1, text: "Đêm 20 rạng sáng ngày 21/12", isCorrect: true},
+      {id: 2, text: "Đêm 21 rạng sáng ngày 21/12", isCorrect: false},
+      {id: 3, text: "Đêm 20 rạng sáng ngày 22/12", isCorrect: false},
+      {id: 4, text: "Đêm 21 rạng sáng ngày 22/12", isCorrect: false},
     ],
   },
   {
     id: 25,
     question:
-      'Yếu tố nào được xem là "chìa khóa" giúp Việt Nam chiến thắng trong trận này?',
+      "Quân ta bắn rơi 18 máu bay (8 máy bay B52); bắt sống nhiều phi công Mĩ vào thời gian nào?",
     options: [
-      { id: 1, text: 'Chiến thuật du kích trên không', isCorrect: false },
+      {id: 1, text: "Ngày 26/11", isCorrect: false},
+      {id: 2, text: "Ngày 26/12", isCorrect: true},
+      {id: 3, text: "Ngày 25/12", isCorrect: false},
+      {id: 4, text: "Ngày 25/11", isCorrect: false},
+    ],
+  },
+  {
+    id: 26,
+    question:
+      "Quân ta  đánh thắng trận cuối cùng, tiêu diệt thêm 1 chiếc B52 vào thời gian nào?",
+    options: [
+      {id: 1, text: "Đêm 27/12", isCorrect: false},
+      {id: 2, text: "Đêm 28/12", isCorrect: false},
+      {id: 3, text: "Đêm 29/12", isCorrect: true},
+      {id: 4, text: "Đêm 29/11", isCorrect: false},
+    ],
+  },
+  {
+    id: 27,
+    question:
+      "Em suy nghĩ gì về việc máy bay Mĩ ném bom hủy diệt trường học, bệnh viện?",
+    options: [
       {
-        id: 2,
-        text: 'Khả năng phán đoán chính xác đường bay của B-52',
+        id: 1,
+        text: "Mĩ ném bóm hủy diệt trường học, bệnh viện cho ta thấy đế quốc Mĩ vô cùng thâm hiểm và độc ác.",
+        isCorrect: false,
+      },
+      {id: 2, text: "Để thực hiện được dã tâm của mình", isCorrect: false},
+      {
+        id: 3,
+        text: "Mĩ ném bóm hủy diệt trường học, bệnh viện cho ta thấy đế quốc Mĩ vô cùng thâm hiểm và độc ác. Để thực hiện được dã tâm của mình,",
+        isCorrect: false,
+      },
+      {
+        id: 4,
+        text: "Mĩ ném bóm hủy diệt trường học, bệnh viện cho ta thấy đế quốc Mĩ vô cùng thâm hiểm và độc ác. Để thực hiện được dã tâm của mình, chúng sẵn sàng giết cả những người dân vô tội.",
         isCorrect: true,
       },
-      { id: 3, text: 'Sự hỗ trợ từ các nước đồng minh', isCorrect: false },
-      { id: 4, text: 'Số lượng tên lửa vượt trội', isCorrect: false },
+    ],
+  },
+  {
+    id: 28,
+    question: "Hà Nội bị ném trúng bom bao nhiêu địa điểm?",
+    options: [
+      {id: 1, text: "100", isCorrect: true},
+      {id: 2, text: "200", isCorrect: false},
+      {id: 3, text: "300", isCorrect: false},
+      {id: 4, text: "400", isCorrect: false},
+    ],
+  },
+  {
+    id: 29,
+    question: "Ở phố Khâm Thiên đã sát hại bao nhiêu người?",
+    options: [
+      {id: 1, text: "100", isCorrect: false},
+      {id: 2, text: "200 người", isCorrect: false},
+      {id: 3, text: "300 người", isCorrect: true},
+      {id: 4, text: "400 người", isCorrect: false},
+    ],
+  },
+  {
+    id: 30,
+    question:
+      "Đâu là đáp ứng không đúng: Ý nghĩa chiến thắng “Điện Biên Phủ trên không”",
+    options: [
+      {id: 1, text: "Đập an âm mưu xâm lược của đế quốc Mĩ", isCorrect: false},
+      {
+        id: 2,
+        text: "Khẳng định ý chí quyết chiến, quyết thắng của quân dân ta",
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: "Buộc Mĩ phải kí hiệp định Pa – ri chấm dứt chiến tranh xâm lược Việt Nam.",
+        isCorrect: false,
+      },
+      {
+        id: 4,
+        text: "Đập an âm mưu xâm lược của thực dân Pháp",
+        isCorrect: true,
+      },
     ],
   },
 ];

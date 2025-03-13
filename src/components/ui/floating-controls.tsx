@@ -83,7 +83,7 @@ const FloatingButtons = ({
               <ChatWidget />
             </TooltipTrigger>
             <TooltipContent>
-              <p>Câu hỏi ôn tập</p>
+              <p>Chat AI</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
