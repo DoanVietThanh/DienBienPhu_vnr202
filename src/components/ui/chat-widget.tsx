@@ -1,6 +1,6 @@
 "use client";
 
-import {useState} from "react";
+import {useEffect, useState, useTransition} from "react";
 import {Button} from "@/components/ui/button";
 import {Card} from "@/components/ui/card";
 import {Input} from "@/components/ui/input";
@@ -8,6 +8,7 @@ import {MessageCircle, X, SendHorizontal, CheckCheck} from "lucide-react";
 import {cn} from "@/lib/utils";
 import {AnimatePresence, motion} from "framer-motion";
 import {v4 as uuidv4} from "uuid";
+import axios from "axios";
 
 interface Message {
   id: string;
@@ -18,18 +19,30 @@ interface Message {
 }
 
 export default function ChatWidget() {
+  const [isPending, startTransition] = useTransition();
   const [isOpen, setIsOpen] = useState(false);
+  const [firstOpen, setFirstOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
-      content: "👋 Xin chào! Bạn muốn biết điều về chiến dịch điện biên phủ?",
+      content:
+        "👋 Xin chào! Bạn muốn biết điều gi về Chiến dịch 12 ngày đêm - Tháng 12/1972?",
       sender: "bot",
       timestamp: new Date(),
     },
   ]);
   const [newMessage, setNewMessage] = useState("");
 
-  const handleSendMessage = () => {
+  useEffect(() => {
+    if (isOpen && !firstOpen) {
+      speak(
+        "Xin chào! Bạn muốn biết điều gì về Chiến dịch 12 ngày đêm - Tháng 12/1972?"
+      );
+      setFirstOpen(true);
+    }
+  }, [isOpen, firstOpen]);
+
+  const handleSendMessage = async () => {
     if (newMessage.trim() === "") return;
 
     const userMessage: Message = {
@@ -43,15 +56,29 @@ export default function ChatWidget() {
     setMessages([...messages, userMessage]);
     setNewMessage("");
 
-    // Simulate bot response
-    setTimeout(() => {
+    startTransition(async () => {
+      const {data} = await axios
+        .post<{response: string}>(
+          "https://01f77d12-ce34-4b1c-96f2-07bf04c39959-00-1t4t2k6qt7zmg.pike.replit.dev/chat",
+          {
+            chat_id: "HCI1HYWNFR",
+            message: {
+              text: newMessage,
+            },
+          }
+        )
+        .catch(() => ({
+          data: {response: "Điều này nằm ngoài tầm hiểu biết của tôi."},
+        }));
+
       const botMessage: Message = {
         id: uuidv4(),
-        content: "Thanks for your message! Our team will get back to you soon.",
+        content: data.response,
         sender: "bot",
         timestamp: new Date(),
       };
 
+      speak(botMessage.content);
       setMessages((prev) => [...prev, botMessage]);
 
       // Update status of user message
@@ -62,7 +89,7 @@ export default function ChatWidget() {
           )
         );
       }, 1000);
-    }, 1000);
+    });
   };
 
   return (
@@ -155,6 +182,18 @@ export default function ChatWidget() {
                     </div>
                   </div>
                 ))}
+
+                {isPending && (
+                  <div className={cn("flex w-full mb-4 justify-start")}>
+                    <div
+                      className={cn(
+                        "max-w-[80%] rounded-md px-4 py-2 bg-muted text-muted-foreground rounded-bl-none"
+                      )}
+                    >
+                      <p className="break-words text-sm">Đang suy nghĩ...</p>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Chat input */}
@@ -167,7 +206,7 @@ export default function ChatWidget() {
                   }}
                 >
                   <Input
-                    placeholder="Type a message..."
+                    placeholder="Aa..."
                     value={newMessage}
                     onChange={(e) => setNewMessage(e.target.value)}
                     className="flex-1"
@@ -195,10 +234,19 @@ function formatTime(date: Date): string {
     (now.getTime() - date.getTime()) / (1000 * 60)
   );
 
-  if (diffInMinutes < 1) return "Just now";
-  if (diffInMinutes < 60) return `${diffInMinutes}m ago`;
+  if (diffInMinutes < 1) return "Bây giờ";
+  if (diffInMinutes < 60) return `${diffInMinutes} phút trước`;
 
   const hours = date.getHours();
   const minutes = date.getMinutes();
   return `${hours}:${minutes.toString().padStart(2, "0")}`;
+}
+
+function speak(text: string) {
+  const speech = new SpeechSynthesisUtterance(text);
+  speech.lang = "vi-VN"; // Chọn ngôn ngữ (ví dụ: tiếng Việt)
+  speech.rate = 1; // Tốc độ đọc (1 là bình thường)
+  speech.pitch = 1; // Cao độ (1 là bình thường)
+
+  window.speechSynthesis.speak(speech);
 }

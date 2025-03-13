@@ -131,3 +131,7 @@ df-messenger .bubble {
 #df-chat-wrapper {
   border-radius: 8px;
 }
+
+body > main > footer {
+  display: none !important;
+}

@@ -10,8 +10,18 @@ import WarDevelopment from "@/components/ui/war-development";
 import WarQuotes from "@/components/ui/war-quotes";
 import WarVietnameseAce from "@/components/ui/war-vietnamese-ace";
 import WeResponse from "@/components/ui/we-respond";
+import {useEffect} from "react";
 
 export default function HomePage() {
+  useEffect(() => {
+    const svgElement = document.querySelector(
+      "#chatbase-bubble-button > div > svg"
+    ) as SVGElement;
+
+    svgElement?.setAttribute("width", "200");
+    svgElement?.setAttribute("height", "200");
+  }, []);
+
   return (
     <main>
       <Banner />
