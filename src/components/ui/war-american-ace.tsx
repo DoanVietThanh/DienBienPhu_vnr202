@@ -54,14 +54,14 @@ const WarAmericanAce = () => {
             data-aos='fade-up'
             data-aos-duration='1000'
           >
-            <p className='Normal'>
+            <p className='Normal text-justify'>
               Lầu Năm Góc huy động gần một nửa số B-52 (193/400 chiếc), cất cánh
               663 lần; hơn 1/3 số máy bay chiến thuật (khoảng 1.200), cất cánh
               gần 4.000 lần, 6 trên tổng số 24 tàu sân bay, 66 tàu chiến của Hạm
               đội 7 ở vịnh Bắc Bộ. Đây là cuộc tập kích đường không lớn nhất
               trong lịch sử chiến tranh.
             </p>
-            <p className='Normal'>
+            <p className='Normal text-justify'>
               B-52 ném bom theo đội hình, mỗi tốp 3 chiếc, mỗi đợt ít nhất 6
               chiếc và nhiều nhất 75 chiếc, theo tài liệu chỉ huy tác chiến phía
               Việt Nam năm 1972. Hộ tống dàn B-52 là hàng chục chiến đấu cơ làm

@@ -43,14 +43,14 @@ const WarVietnameseAce = () => {
               data-aos='fade-up'
               data-aos-duration='1000'
             >
-              <p className='Normal'>
+              <p className='Normal text-justify'>
                 Chiến dịch phòng vệ do Bộ tư lệnh Quân chủng Phòng không Không
                 quân tổ chức, chỉ huy 6 trung đoàn tên lửa, 4 trung đoàn tiêm
                 kích, 16 trung đoàn và 22 tiểu đoàn pháo phòng không, 4 trung
                 đoàn radar, 346 đơn vị pháo, súng máy phòng không của bộ đội địa
                 phương và dân quân tự vệ.
               </p>
-              <p className='Normal'>
+              <p className='Normal text-justify'>
                 Tên lửa là lực lượng có điều kiện tiêu diệt B-52, song các đơn
                 vị đang phân tán nhiều nhiệm vụ. Bảo vệ Hà Nội lúc này có 9 tiểu
                 đoàn. Ông Nguyễn Văn Phiệt kể, bộ khí tài của Tiểu đoàn 57 đã
